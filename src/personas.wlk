@@ -3,7 +3,7 @@ import bolichito.*
 
 object rosa {
 	
-	method gustos(objeto){ return objeto.peso()<2000}
+	method gustos(objeto){ return objeto.peso()<=2000}
 		
 }
 
@@ -20,5 +20,5 @@ object luisa {
 
 object juan{
 	
-	method gustos(objeto){ return objeto.filter({f=>f.color().notfuerte()}) || objeto.peso().between(1200,1800)}
+	method gustos(objeto){ return if (not objeto.color().fuerte() || objeto.peso().between(1200,1800)){}else{}}
 }

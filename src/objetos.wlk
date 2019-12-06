@@ -84,12 +84,15 @@ object banquito{
 
 object cajita{
 
-	var objeto=[]
-	
+	var property objeto=[]
+
+		
 	method color(){return rojo}
 	method material(){return cobre}
-	method agregarObjeto(objetos){return objeto.add(objetos)}
-	method peso(){return 400+objeto.peso()}
+	method agregarObjeto(objetos){return objeto.add(objetos)
+		
+	}
+	method peso(){return objeto.peso()+400}
 	
 }
 

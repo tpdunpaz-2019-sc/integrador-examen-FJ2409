@@ -18,18 +18,18 @@ object bolichito{
 	
 	method esBrillante(){return if(vidriera.all({f=>f.material().brilla()}) && mostrador.all({f=>f.material().brilla()})){}else{}}
  
- 	method esMonocromatico(){return if(vidriera.any({f=>f.color()}) == mostrador.any({f=>f.color()})){}else{}} 	
+ 	method esMonocromatico(){return if(vidriera.color() == mostrador.color()){}else{}}
+ 		
  	
- 	method estaDesequilibrado(){ return vidriera.any({f=>f.peso()>mostrador.peso()})}
+ 	method estaDesequilibrado(){ return if(vidriera.leght({f=>f.peso()}) > mostrador.leght({f=>f.peso()})){}else{}}
  	
- 	method tieneAlgoDeColor(colores){ return mostrador.any({f=>f.color()==colores})}
+ 	method tieneAlgoDeColor(colores){ return mostrador.any({f=>f.color()==colores})||vidriera.any({f=>f.color()==colores})}
  	
- 	method puedeMejorar(){ return if (not self.esMonocromatico()== not self.esMonocromatico()){ "falta alegria"} else { if(not self.estaDesequilibrado()){"falta equilibrio"}else{}}
+ 	method puedeMejorar(){ return if (not self.esMonocromatico()== not self.esMonocromatico()){ "falta alegria"} else { if(not self.estaDesequilibrado()){"falta equilibrio"}else{}}}
  	
  	method puedeOfrecerleAlgoA(persona){ 
  		
- 		return if(vidriera.filter({persona.gusto()}) || mostrador.filter({persona.gusto()})){}else{}}
- 	
- 	
+ 		return if(vidriera.filter({f=>persona.gusto()}) || mostrador.filter({f=>persona.gusto()})){}else{}}
  	
  	}
+ 
